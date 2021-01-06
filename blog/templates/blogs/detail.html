@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
-    {% load static %}
+      {% load static %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.79.0">
-    <title>ASHREETH</title>
+    <title>{{blog.title}}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
 
@@ -48,7 +48,7 @@
             <div class="navbar-nav ml-auto">
               <a class="nav-link active" aria-current="page" href="http://twitter.com">twitter</a>
               <a class="nav-link active" href="{% static 'resume.pdf' %}">Resume</a>
-              <a class="nav-link" href="{% url 'allblogs' %}">blog</a>
+              <a class="nav-link active" href="{% url 'allblogs' %}">blog</a>
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </div>
           </div>
@@ -56,38 +56,17 @@
       </nav>
 </header>
 
-<main>
-
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">ASHREETH WEBSITES</h1>
-        <p class="lead text-muted">this is my first website creation...i want to create a job applications.</p>
-        <p>
-          <a href="mailto:puliashreeth140601@gmail.com" class="btn btn-primary my-2">MAIL ME</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-light">
+<main role="main">
     <div class="container">
-   
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-          {% for job in jobs.all %}
-        <div class="col">
-          <div class="card shadow-sm">
-           <img class="card-img-top" src="{{job.image.url}}" />
-            <div class="card-body">
-              <p class="card-text">{{ job.summary}}</p>
-            </div>
-        </div>
-        </div>
-        {% endfor %}
-      </div>
+    <h1 class="text-center pt-3" style="color:coral; ">{{blog.title}}</h1>
+    <p class='text-center'>{{blog.pub_date}}</p><br/>
+    <div style="width: auto;">
+    <img class="img-fluid"   src="{{blog.image.url}}" />
     </div>
-  </div>
-
+    <br/>
+    <br/>
+    <p class="text-center">{{blog.summary}}</p>
+    </div>
 </main>
 
 <footer class="text-muted py-5">
